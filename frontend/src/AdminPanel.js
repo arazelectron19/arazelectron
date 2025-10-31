@@ -605,10 +605,16 @@ const AdminPanel = () => {
                         </button>
                         <button
                           onClick={() => handleDelete(product.id)}
-                          className="text-red-600 hover:text-red-900"
+                          disabled={loading}
+                          className={`${
+                            loading 
+                              ? 'text-gray-400 cursor-not-allowed' 
+                              : 'text-red-600 hover:text-red-900 hover:underline'
+                          } font-medium transition-colors`}
                           data-testid={`delete-product-${product.id}`}
+                          title={loading ? 'Gözləyin...' : 'Məhsulu sil'}
                         >
-                          Sil
+                          {loading ? '⏳ Gözləyin...' : '🗑️ Sil'}
                         </button>
                       </td>
                     </tr>
