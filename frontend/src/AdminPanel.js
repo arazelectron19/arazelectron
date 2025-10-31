@@ -164,31 +164,31 @@ const AdminPanel = () => {
     }
   };
 
-  const handleDelete = async (productId) => {
-    // Əmin olma
-    const confirmDelete = window.confirm('Bu məhsulu silmək istədiyinizə əminsiniz?');
-    console.log('Confirm result:', confirmDelete);
+  const handleDeleteClick = (productId) => {
+    console.log('Delete düyməsinə kliklənd:', productId);
+    setProductToDelete(productId);
+    setShowDeleteConfirm(true);
+  };
+
+  const handleDeleteConfirm = async () => {
+    if (!productToDelete) return;
     
-    if (!confirmDelete) {
-      console.log('İstifadəçi silməni ləğv etdi');
-      return;
-    }
-    
-    console.log('Məhsul silinir:', productId);
+    console.log('Silmə təsdiqləndi:', productToDelete);
     setLoading(true);
+    setShowDeleteConfirm(false);
     
     try {
-      console.log('API çağırışı:', `${API}/products/${productId}`);
-      const response = await axios.delete(`${API}/products/${productId}`);
+      console.log('API çağırışı:', `${API}/products/${productToDelete}`);
+      const response = await axios.delete(`${API}/products/${productToDelete}`);
       console.log('Silmə cavabı:', response.data);
       
-      // Uğurlu mesaj
+      // Uğurlu mesaj göstər
       alert('✅ Məhsul uğurla silindi!');
       
       // Məlumatları yenilə
       await loadData();
       
-      // Ana səhifəyə məlumat ver ki, məhsulları yeniləsin
+      // Ana səhifəyə məlumat ver
       localStorage.setItem('products-updated', Date.now().toString());
       window.dispatchEvent(new CustomEvent('products-updated'));
       
@@ -202,7 +202,14 @@ const AdminPanel = () => {
       alert('❌ Xəta: ' + errorMessage);
     } finally {
       setLoading(false);
+      setProductToDelete(null);
     }
+  };
+
+  const handleDeleteCancel = () => {
+    console.log('Silmə ləğv edildi');
+    setShowDeleteConfirm(false);
+    setProductToDelete(null);
   };
 
   const updateOrderStatus = async (orderId, newStatus) => {
