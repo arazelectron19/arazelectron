@@ -30,12 +30,13 @@ next-env.d.ts
 *.tsbuildinfo
 
 # Production builds
-/build
+/frontend/build      ← Frontend build folder (ignored)
+/backend/uploads     ← Backend uploads (ignored)
 dist/
 dist
 
-# Docs folder for GitHub Pages (DO NOT IGNORE - needed for deployment)
-# docs/ is committed intentionally
+# GitHub Pages build (MUST be committed)
+# /docs/             ← DO NOT IGNORE - needed for GitHub Pages ✅
 
 # Environment files (comprehensive coverage)
 .env
