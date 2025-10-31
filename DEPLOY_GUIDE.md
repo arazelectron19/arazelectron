@@ -172,12 +172,12 @@ Bu 1-2 dəqiqə çəkəcək. ⏳
 
 **Frontend:**
 ```
-https://arazelectron.github.io/arazelectron3
+https://arazelectron19.github.io/arazelectron
 ```
 
 **Admin Panel:**
 ```
-https://arazelectron.github.io/arazelectron3/#/araz79
+https://arazelectron19.github.io/arazelectron/#/araz79
 ```
 
 **Backend API:**

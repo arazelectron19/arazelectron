@@ -3,7 +3,7 @@
 > Elektron avadanlıqlar üçün tam funksional, production-ready e-commerce platforması
 
 [![Deploy to Railway](https://railway.app/button.svg)](https://railway.app/new)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-success)](https://arazelectron.github.io/arazelectron3)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-success)](https://arazelectron19.github.io/arazelectron)
 
 ---
 
@@ -335,6 +335,6 @@ Bu layihə MIT lisenziyası ilə paylanır.
 
 **🚀 Yaradılıb Emergent.sh ilə**
 
-[Live Demo](https://arazelectron.github.io/arazelectron3) · [Deploy Guide](DEPLOY_GUIDE.md) · [Report Bug](https://github.com/arazelectron/arazelectron3/issues)
+[Live Demo](https://arazelectron19.github.io/arazelectron) · [Deploy Guide](DEPLOY_GUIDE.md) · [Report Bug](https://github.com/arazelectron/arazelectron3/issues)
 
 </div>

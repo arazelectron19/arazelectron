@@ -147,9 +147,9 @@ yarn deploy
 
 ## ✅ Hazırdır! Saytınız İşləyir
 
-- **Frontend:** https://arazelectron.github.io/arazelectron3
+- **Frontend:** https://arazelectron19.github.io/arazelectron
 - **Backend API:** https://sizin-url.up.railway.app
-- **Admin Panel:** https://arazelectron.github.io/arazelectron3/#/araz79
+- **Admin Panel:** https://arazelectron19.github.io/arazelectron/#/araz79
 
 ---
 

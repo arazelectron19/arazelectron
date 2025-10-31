@@ -48,7 +48,7 @@ GitHub repo-da:
 ### 4️⃣ Saytınız Hazırdır! 🎉
 
 ```
-https://arazelectron.github.io/arazelectron3
+https://arazelectron19.github.io/arazelectron
 ```
 
 ---
@@ -94,7 +94,7 @@ Hər dəfə kod dəyişdirəndə:
 ### package.json
 ```json
 {
-  "homepage": "https://arazelectron.github.io/arazelectron3"
+  "homepage": "https://arazelectron19.github.io/arazelectron"
 }
 ```
 

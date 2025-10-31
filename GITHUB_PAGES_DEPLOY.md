@@ -4,7 +4,7 @@
 
 Saytınız GitHub Pages üçün hazır vəziyyətdədir! 
 
-**Homepage URL:** `https://arazelectron.github.io/arazelectron3`
+**Homepage URL:** `https://arazelectron19.github.io/arazelectron`
 
 ---
 
@@ -50,7 +50,7 @@ Bu əmr:
 
 Deploy tamamlandıqdan sonra saytınız buradan əlçatan olacaq:
 
-**🔗 https://arazelectron.github.io/arazelectron3**
+**🔗 https://arazelectron19.github.io/arazelectron**
 
 ---
 

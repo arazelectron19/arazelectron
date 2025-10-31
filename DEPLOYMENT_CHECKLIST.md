@@ -81,7 +81,7 @@ yarn deploy
 - [ ] 2-3 dəqiqə gözləyin
 
 ### 7. Final Test
-- [ ] Frontend açılır: https://arazelectron.github.io/arazelectron3
+- [ ] Frontend açılır: https://arazelectron19.github.io/arazelectron
 - [ ] Məhsullar görsənir
 - [ ] Admin panel işləyir: `/#/araz79`
 - [ ] Backend API cavab verir
