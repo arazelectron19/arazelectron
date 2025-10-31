@@ -20,7 +20,7 @@ Build artıq hazırdır və `/docs` qovluğundadır!
 4. Branch: **main** → Folder: **/docs**
 5. **Save**
 
-**Saytınız hazırdır:** https://arazelectron.github.io/arazelectron3
+**Saytınız hazırdır:** https://arazelectron19.github.io/arazelectron
 
 📖 **Ətraflı təlimat:** [GITHUB_PAGES_DOCS_DEPLOY.md](GITHUB_PAGES_DOCS_DEPLOY.md)
 
