@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/arazelectron3/static/css/main.625d3981.css",
+    "main.js": "/arazelectron3/static/js/main.0e00738a.js",
+    "index.html": "/arazelectron3/index.html",
+    "main.625d3981.css.map": "/arazelectron3/static/css/main.625d3981.css.map",
+    "main.0e00738a.js.map": "/arazelectron3/static/js/main.0e00738a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.625d3981.css",
+    "static/js/main.0e00738a.js"
+  ]
+}
