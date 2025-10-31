@@ -30,6 +30,9 @@ next-env.d.ts
 dist/
 dist
 
+# Docs folder for GitHub Pages (DO NOT IGNORE - needed for deployment)
+# docs/ is committed intentionally
+
 # Environment files (comprehensive coverage)
 .env
 .env.local
