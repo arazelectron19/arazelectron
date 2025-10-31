@@ -163,20 +163,43 @@ const AdminPanel = () => {
   };
 
   const handleDelete = async (productId) => {
-    if (!window.confirm('Bu məhsulu silmək istədiyinizə əminsiniz?')) return;
+    // Əmin olma
+    const confirmDelete = window.confirm('Bu məhsulu silmək istədiyinizə əminsiniz?');
+    console.log('Confirm result:', confirmDelete);
+    
+    if (!confirmDelete) {
+      console.log('İstifadəçi silməni ləğv etdi');
+      return;
+    }
+    
+    console.log('Məhsul silinir:', productId);
+    setLoading(true);
     
     try {
-      await axios.delete(`${API}/products/${productId}`);
-      alert('Məhsul silindi!');
-      loadData();
+      console.log('API çağırışı:', `${API}/products/${productId}`);
+      const response = await axios.delete(`${API}/products/${productId}`);
+      console.log('Silmə cavabı:', response.data);
+      
+      // Uğurlu mesaj
+      alert('✅ Məhsul uğurla silindi!');
+      
+      // Məlumatları yenilə
+      await loadData();
       
       // Ana səhifəyə məlumat ver ki, məhsulları yeniləsin
       localStorage.setItem('products-updated', Date.now().toString());
       window.dispatchEvent(new CustomEvent('products-updated'));
       
+      console.log('Məhsul silindi və məlumatlar yeniləndi');
+      
     } catch (error) {
-      console.error('Silmə xətası:', error);
-      alert('Silmə zamanı xəta baş verdi!');
+      console.error('❌ Silmə xətası:', error);
+      console.error('Xəta detalları:', error.response?.data);
+      
+      const errorMessage = error.response?.data?.detail || error.message || 'Silmə zamanı xəta baş verdi!';
+      alert('❌ Xəta: ' + errorMessage);
+    } finally {
+      setLoading(false);
     }
   };
 
