@@ -17,6 +17,8 @@ const AdminPanel = () => {
   const [showAddForm, setShowAddForm] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [productToDelete, setProductToDelete] = useState(null);
 
   // Form state
   const [formData, setFormData] = useState({
