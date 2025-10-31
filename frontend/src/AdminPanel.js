@@ -598,10 +598,15 @@ const AdminPanel = () => {
                       <td className="px-6 py-4 whitespace-nowrap text-sm space-x-2">
                         <button
                           onClick={() => handleEdit(product)}
-                          className="text-orange-600 hover:text-orange-900"
+                          disabled={loading}
+                          className={`${
+                            loading 
+                              ? 'text-gray-400 cursor-not-allowed' 
+                              : 'text-orange-600 hover:text-orange-900 hover:underline'
+                          } font-medium transition-colors mr-4`}
                           data-testid={`edit-product-${product.id}`}
                         >
-                          Redaktə
+                          {loading ? '⏳' : '✏️'} Redaktə
                         </button>
                         <button
                           onClick={() => handleDelete(product.id)}
