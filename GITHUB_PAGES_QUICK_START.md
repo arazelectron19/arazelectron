@@ -40,7 +40,7 @@ GitHub will build and deploy your site.
 
 ### Step 4: Your Site is Live! 🎉
 
-Visit: **https://arazelectron.github.io/arazelectron3**
+Visit: **https://arazelectron19.github.io/arazelectron**
 
 ---
 
