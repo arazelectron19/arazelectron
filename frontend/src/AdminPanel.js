@@ -618,7 +618,7 @@ const AdminPanel = () => {
                           {loading ? '⏳' : '✏️'} Redaktə
                         </button>
                         <button
-                          onClick={() => handleDelete(product.id)}
+                          onClick={() => handleDeleteClick(product.id)}
                           disabled={loading}
                           className={`${
                             loading 
