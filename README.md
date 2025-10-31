@@ -102,8 +102,8 @@ yarn build  # production
 
 ## 🌐 Live Demo
 
-**🔗 Frontend:** https://arazelectron.github.io/arazelectron3  
-**🔐 Admin Panel:** https://arazelectron.github.io/arazelectron3/#/araz79
+**🔗 Frontend:** https://arazelectron19.github.io/arazelectron  
+**🔐 Admin Panel:** https://arazelectron19.github.io/arazelectron/#/araz79
 
 ---
 
