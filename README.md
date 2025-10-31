@@ -7,17 +7,35 @@
 
 ---
 
-## 🚀 Sürətli Başlanğıc
+## 🌐 GitHub Pages Deploy
 
-### ⚡ 10 Dəqiqədə Deploy Et!
+### ⚡ Method 1: /docs Folder (Tövsiyə edilir - Ən Sadə) ✅
+
+Build artıq hazırdır və `/docs` qovluğundadır!
+
+**Addımlar:**
+1. **"Save to GitHub"** düyməsi
+2. GitHub repo → **Settings → Pages**
+3. Source: **Deploy from a branch**
+4. Branch: **main** → Folder: **/docs**
+5. **Save**
+
+**Saytınız hazırdır:** https://arazelectron.github.io/arazelectron3
+
+📖 **Ətraflı təlimat:** [GITHUB_PAGES_DOCS_DEPLOY.md](GITHUB_PAGES_DOCS_DEPLOY.md)
+
+---
+
+### Method 2: gh-pages Branch (Alternativ)
 
 ```bash
-# 1. Emergent-də "Save to GitHub" düyməsi
-# 2. Railway.app-da backend deploy et
-# 3. GitHub Pages-də frontend deploy et
+cd /app/frontend
+yarn deploy
 ```
 
-📖 **Addım-addım təlimat:** [DEPLOY_GUIDE.md](DEPLOY_GUIDE.md)
+GitHub repo → Settings → Pages → Source: **gh-pages** branch
+
+📖 **Təlimat:** [GITHUB_PAGES_DEPLOY.md](GITHUB_PAGES_DEPLOY.md)
 
 ---
 
