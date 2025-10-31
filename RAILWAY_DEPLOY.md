@@ -51,7 +51,7 @@ mongodb+srv://araz_user:<password>@araz-elektron.xxxxx.mongodb.net/?retryWrites=
 ### b) Yeni Project Yaradın
 1. **Dashboard** → **New Project**
 2. **Deploy from GitHub repo** seçin
-3. Repo seçin: `arazelectron/arazelectron3`
+3. Repo seçin: `arazelectron19/arazelectron`
 4. **Deploy Now**
 
 ### c) Backend Service Konfiqurasiya
@@ -140,7 +140,7 @@ yarn deploy
 ## 6️⃣ GitHub Pages-ə Push
 
 1. Emergent-də **"Save to GitHub"** düyməsi
-2. Repo: `arazelectron/arazelectron3`
+2. Repo: `arazelectron19/arazelectron`
 3. **PUSH TO GITHUB**
 
 ---

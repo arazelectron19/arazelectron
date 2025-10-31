@@ -63,7 +63,7 @@ mongodb+srv://araz_user:PAROL@cluster.xxxxx.mongodb.net/?retryWrites=true&w=majo
 
 **Emergent platformasında:**
 - Chat input sahəsinin yanında **"Save to GitHub"** düyməsi
-- Repo seçin: `arazelectron/arazelectron3` 
+- Repo seçin: `arazelectron19/arazelectron` 
   - Əgər yoxdursa, **"Create new repository"**
   - Repo adı: `arazelectron3`
   - Public

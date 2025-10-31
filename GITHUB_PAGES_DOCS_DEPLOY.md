@@ -29,7 +29,7 @@ cp /app/frontend/public/.nojekyll /app/docs/.nojekyll
 
 **Emergent platformasında:**
 1. **"Save to GitHub"** düyməsinə klikləyin
-2. Repo seçin: `arazelectron/arazelectron3`
+2. Repo seçin: `arazelectron19/arazelectron`
 3. Branch: `main` (və ya `master`)
 4. **PUSH TO GITHUB** ✅
 

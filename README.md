@@ -318,7 +318,7 @@ Bu layihə MIT lisenziyası ilə paylanır.
 
 - 📧 Email: [support@arazelectron.az](mailto:support@arazelectron.az)
 - 💬 Emergent Chat: Sual soruşun!
-- 🐛 Issues: [GitHub Issues](https://github.com/arazelectron/arazelectron3/issues)
+- 🐛 Issues: [GitHub Issues](https://github.com/arazelectron19/arazelectron/issues)
 
 ---
 
@@ -335,6 +335,6 @@ Bu layihə MIT lisenziyası ilə paylanır.
 
 **🚀 Yaradılıb Emergent.sh ilə**
 
-[Live Demo](https://arazelectron19.github.io/arazelectron) · [Deploy Guide](DEPLOY_GUIDE.md) · [Report Bug](https://github.com/arazelectron/arazelectron3/issues)
+[Live Demo](https://arazelectron19.github.io/arazelectron) · [Deploy Guide](DEPLOY_GUIDE.md) · [Report Bug](https://github.com/arazelectron19/arazelectron/issues)
 
 </div>

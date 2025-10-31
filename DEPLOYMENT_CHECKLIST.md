@@ -35,7 +35,7 @@ GitHub-a push etməzdən əvvəl yoxlayın:
 ## 🚀 Deploy Addımları
 
 ### 1. Emergent-də "Save to GitHub"
-- [x] Repo: `arazelectron/arazelectron3`
+- [x] Repo: `arazelectron19/arazelectron`
 - [x] Branch: `main` və ya `master`
 - [x] Push
 

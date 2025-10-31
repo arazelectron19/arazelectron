@@ -14,7 +14,7 @@ Saytınız GitHub Pages üçün hazır vəziyyətdədir!
 
 Emergent platformasında:
 1. Chat input sahəsinin yanındakı **"Save to GitHub"** düyməsini klikləyin
-2. **arazelectron/arazelectron3** repo-sunu seçin (və ya yeni yaradın)
+2. **arazelectron19/arazelectron** repo-sunu seçin (və ya yeni yaradın)
 3. Branch seçin (main/master)
 4. **"PUSH TO GITHUB"** düyməsinə basın
 
