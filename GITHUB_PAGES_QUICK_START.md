@@ -19,7 +19,7 @@ Your site is **READY** for GitHub Pages deployment using the `/docs` folder meth
 
 **In Emergent Platform:**
 1. Click **"Save to GitHub"** button
-2. Select repo: `arazelectron/arazelectron3`
+2. Select repo: `arazelectron19/arazelectron`
 3. Branch: `main`
 4. Click **PUSH TO GITHUB** ✅
 
