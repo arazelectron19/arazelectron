@@ -104,6 +104,38 @@ const HomePage = () => {
         </div>
       </header>
 
+      {/* Axtarış Paneli */}
+      <div className="bg-white border-b border-gray-200 py-6">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-center">
+            <div className="w-full max-w-3xl" style={{ width: '60%' }}>
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Məhsul axtar..."
+                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900"
+                  data-testid="search-input"
+                />
+                <button
+                  onClick={() => {}}
+                  className="px-6 py-3 bg-orange-500 text-white font-medium rounded-lg hover:bg-orange-600 transition-colors flex items-center gap-2"
+                  data-testid="search-button"
+                >
+                  🔍 Axtar
+                </button>
+              </div>
+              {searchQuery && (
+                <div className="mt-2 text-sm text-gray-600">
+                  {getFilteredProducts().length} nəticə tapıldı
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Sol tərəf - Kataloq */}
