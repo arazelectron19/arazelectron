@@ -43,10 +43,23 @@ const HomePage = () => {
   };
 
   const getFilteredProducts = () => {
-    if (selectedCategory === 'all') {
-      return products;
+    let filtered = products;
+    
+    // Kateqoriya filteri
+    if (selectedCategory !== 'all') {
+      filtered = filtered.filter(p => p.category === selectedCategory);
     }
-    return products.filter(p => p.category === selectedCategory);
+    
+    // Axtarış filteri (ad və kateqoriyaya görə)
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      filtered = filtered.filter(p => 
+        p.name.toLowerCase().includes(query) || 
+        p.category.toLowerCase().includes(query)
+      );
+    }
+    
+    return filtered;
   };
 
   const openProductModal = (product) => {
