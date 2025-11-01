@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/arazelectron/static/css/main.87c74adf.css",
-    "main.js": "/arazelectron/static/js/main.e98c368f.js",
-    "index.html": "/arazelectron/index.html",
-    "main.87c74adf.css.map": "/arazelectron/static/css/main.87c74adf.css.map",
-    "main.e98c368f.js.map": "/arazelectron/static/js/main.e98c368f.js.map"
+    "main.css": "./static/css/main.87c74adf.css",
+    "main.js": "./static/js/main.e98c368f.js",
+    "index.html": "./index.html",
+    "main.87c74adf.css.map": "./static/css/main.87c74adf.css.map",
+    "main.e98c368f.js.map": "./static/js/main.e98c368f.js.map"
   },
   "entrypoints": [
     "static/css/main.87c74adf.css",
