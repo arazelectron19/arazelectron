@@ -116,6 +116,15 @@ class OrderCreate(BaseModel):
 async def root():
     return {"message": "Araz Elektron - API işləyir!"}
 
+@api_router.get("/health")
+async def health_check():
+    """Health check endpoint for Railway keep-alive"""
+    return {
+        "status": "healthy",
+        "service": "araz-elektron-backend",
+        "timestamp": datetime.utcnow().isoformat()
+    }
+
 # Kateqoriyalar
 @api_router.get("/categories")
 async def get_categories():
