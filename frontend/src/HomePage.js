@@ -44,12 +44,25 @@ const HomePage = () => {
   const loadData = async () => {
     try {
       setLoading(true);
+      setServerWaking(false);
       
-      // Məhsulları yüklə
-      const productsResponse = await axios.get(`${API}/products`);
-      setProducts(productsResponse.data || []);
+      // İlk API çağırışını retry ilə et (server oyaq olmaya bilər)
+      try {
+        const productsResponse = await fetchWithRetry(`${API}/products`, 3, 1000);
+        setProducts(productsResponse.data || []);
+      } catch (firstError) {
+        // Əgər ilk retry uğursuz olsa, "server waking up" mesajı göstər
+        setServerWaking(true);
+        console.log('Server waking up, waiting 5 seconds...');
+        await new Promise(resolve => setTimeout(resolve, 5000));
+        
+        // Bir daha cəhd et
+        const productsResponse = await fetchWithRetry(`${API}/products`, 2, 2000);
+        setProducts(productsResponse.data || []);
+        setServerWaking(false);
+      }
       
-      // Kateqoriyaları yüklə
+      // Kateqoriyaları yüklə (artıq server oyaqdır)
       const categoriesResponse = await axios.get(`${API}/categories`);
       setCategories(categoriesResponse.data.categories || []);
       
