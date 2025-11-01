@@ -2,42 +2,69 @@ name: Keep Railway Backend Alive
 
 on:
   schedule:
-    # Hər 10 dəqiqədə bir işləyir (Railway serverini oyaq saxlayır)
-    - cron: '*/10 * * * *'
-  workflow_dispatch:  # Manual olaraq da işə sala bilərsiniz
+    # Hər 5 dəqiqədə bir işləyir (daha aggressiv keep-alive)
+    - cron: '*/5 * * * *'
+  workflow_dispatch:  # Manual test üçün
 
 jobs:
   keep-alive:
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     
     steps:
-      - name: Ping Backend Health Endpoint
+      - name: Double Ping Backend Health Endpoint
         run: |
-          # Railway backend URL
+          # Railway backend URL (fixed)
           BACKEND_URL="https://arazelectron-production.up.railway.app"
           
-          echo "🔄 Pinging backend: $BACKEND_URL/api/health"
+          # First ping - wake up server
+          echo "🔄 First ping: $BACKEND_URL/api/health"
+          response1=$(curl -s -o /dev/null -w "%{http_code}" --max-time 30 "$BACKEND_URL/api/health" || echo "000")
           
-          # Health endpoint-ə ping göndər
-          response=$(curl -s -o /dev/null -w "%{http_code}" "$BACKEND_URL/api/health" || echo "000")
-          
-          if [ "$response" = "200" ]; then
-            echo "✅ Backend is alive! (HTTP $response)"
+          if [ "$response1" = "200" ]; then
+            echo "✅ First ping successful! (HTTP $response1)"
           else
-            echo "⚠️ Backend returned: HTTP $response"
-            echo "This is normal if the server is waking up from sleep."
+            echo "⚠️ First ping returned: HTTP $response1 (server might be waking up)"
           fi
+          
+          # Wait for server to fully wake up
+          echo "⏳ Waiting 20 seconds..."
+          sleep 20
+          
+          # Second ping - ensure server is fully awake
+          echo "🔄 Second ping: $BACKEND_URL/api/health"
+          response2=$(curl -s -o /dev/null -w "%{http_code}" --max-time 30 "$BACKEND_URL/api/health" || echo "000")
+          
+          if [ "$response2" = "200" ]; then
+            echo "✅ Second ping successful! (HTTP $response2)"
+            echo "🎉 Backend is fully awake and stable!"
+          else
+            echo "❌ Second ping failed: HTTP $response2"
+            exit 1
+          fi
+        continue-on-error: false
+        timeout-minutes: 2
           
       - name: Ping Root Endpoint
         run: |
           BACKEND_URL="https://arazelectron-production.up.railway.app"
           
-          echo "🔄 Pinging root: $BACKEND_URL/api/"
+          echo "🔄 Pinging root: $BACKEND_URL/"
+          response=$(curl -s -o /dev/null -w "%{http_code}" --max-time 30 "$BACKEND_URL/" || echo "000")
           
-          response=$(curl -s -o /dev/null -w "%{http_code}" "$BACKEND_URL/api/" || echo "000")
-          
-          if [ "$response" = "200" ]; then
-            echo "✅ Root endpoint is alive! (HTTP $response)"
+          if [ "$response" = "200" ] || [ "$response" = "404" ]; then
+            echo "✅ Root endpoint responsive! (HTTP $response)"
           else
             echo "⚠️ Root endpoint returned: HTTP $response"
           fi
+        continue-on-error: true
+        timeout-minutes: 1
+      
+      - name: Final Status
+        if: always()
+        run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "✅ Keep-alive ping completed!"
+          echo "⏰ Next ping in 5 minutes"
+          echo "🚂 Railway server is staying awake"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
