@@ -13,9 +13,8 @@ jobs:
     steps:
       - name: Ping Backend Health Endpoint
         run: |
-          # Railway backend URL-inizi buraya əlavə edin
-          # Deployment-dən sonra yeniləyin!
-          BACKEND_URL="${{ secrets.BACKEND_URL || 'https://your-app.up.railway.app' }}"
+          # Railway backend URL
+          BACKEND_URL="https://arazelectron-production.up.railway.app"
           
           echo "🔄 Pinging backend: $BACKEND_URL/api/health"
           
@@ -31,7 +30,7 @@ jobs:
           
       - name: Ping Root Endpoint
         run: |
-          BACKEND_URL="${{ secrets.BACKEND_URL || 'https://your-app.up.railway.app' }}"
+          BACKEND_URL="https://arazelectron-production.up.railway.app"
           
           echo "🔄 Pinging root: $BACKEND_URL/api/"
           
