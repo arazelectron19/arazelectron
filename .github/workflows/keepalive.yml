@@ -1,0 +1,44 @@
+name: Keep Railway Backend Alive
+
+on:
+  schedule:
+    # Hər 10 dəqiqədə bir işləyir (Railway serverini oyaq saxlayır)
+    - cron: '*/10 * * * *'
+  workflow_dispatch:  # Manual olaraq da işə sala bilərsiniz
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Ping Backend Health Endpoint
+        run: |
+          # Railway backend URL-inizi buraya əlavə edin
+          # Deployment-dən sonra yeniləyin!
+          BACKEND_URL="${{ secrets.BACKEND_URL || 'https://your-app.up.railway.app' }}"
+          
+          echo "🔄 Pinging backend: $BACKEND_URL/api/health"
+          
+          # Health endpoint-ə ping göndər
+          response=$(curl -s -o /dev/null -w "%{http_code}" "$BACKEND_URL/api/health" || echo "000")
+          
+          if [ "$response" = "200" ]; then
+            echo "✅ Backend is alive! (HTTP $response)"
+          else
+            echo "⚠️ Backend returned: HTTP $response"
+            echo "This is normal if the server is waking up from sleep."
+          fi
+          
+      - name: Ping Root Endpoint
+        run: |
+          BACKEND_URL="${{ secrets.BACKEND_URL || 'https://your-app.up.railway.app' }}"
+          
+          echo "🔄 Pinging root: $BACKEND_URL/api/"
+          
+          response=$(curl -s -o /dev/null -w "%{http_code}" "$BACKEND_URL/api/" || echo "000")
+          
+          if [ "$response" = "200" ]; then
+            echo "✅ Root endpoint is alive! (HTTP $response)"
+          else
+            echo "⚠️ Root endpoint returned: HTTP $response"
+          fi
