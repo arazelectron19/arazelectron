@@ -10,6 +10,7 @@ const HomePage = () => {
   const [categories, setCategories] = useState([]);
   const [contactInfo, setContactInfo] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(true);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showModal, setShowModal] = useState(false);
